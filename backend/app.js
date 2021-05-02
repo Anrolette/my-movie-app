@@ -28,9 +28,9 @@ mongoose.connection.once('open', function() {
 })
 
 // To get the port number from the environment variables instead of hard coding it, we use the following code:
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+var server_port = process.env.YOUR_PORT || process.env.PORT || 3001;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
 
